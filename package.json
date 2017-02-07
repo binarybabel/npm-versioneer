@@ -1,0 +1,26 @@
+{
+  "name": "versioneer",
+  "version": "0.0.1",
+  "description": "Node port of Versioneer (https://rubygems.org/gems/versioneer) - Work In Progress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binarybabel/npm-versioneer.git"
+  },
+  "keywords": [
+    "git",
+    "scm",
+    "vcs",
+    "version",
+    "versioning"
+  ],
+  "author": "BinaryBabel OSS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/binarybabel/npm-versioneer/issues"
+  },
+  "homepage": "https://github.com/binarybabel/npm-versioneer#readme"
+}
