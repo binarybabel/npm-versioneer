@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+'use strict';
+
+const fs = require('fs');
+
+exports.ignore = function () {
+    // Do nothing.
+};
+
+exports.is_test_ci = function () {
+    return !!(process.env.TRAVIS_BUILD_NUMBER || process.env.APPVEYOR);
+};
+
+exports.rm_f = function (file) {
+  if (fs.existsSync(file)) {
+      fs.unlinkSync(file);
+  }
+};
+
+exports.delete_folder = function (path) {
+    var files = [];
+    if (fs.existsSync(path)) {
+        files = fs.readdirSync(path);
+        files.forEach(function (file, index) {
+            var curPath = path + "/" + file;
+            if (fs.lstatSync(curPath).isDirectory()) {
+                exports.delete_folder(curPath);
+            } else {
+                fs.unlinkSync(curPath);
+            }
+        });
+        fs.rmdirSync(path);
+    }
+};

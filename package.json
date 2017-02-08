@@ -1,10 +1,13 @@
 {
   "name": "versioneer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node port of Versioneer (https://rubygems.org/gems/versioneer) - Work In Progress",
   "main": "index.js",
+  "bin": {
+    "versioneer": "bin/versioneer.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodeunit"
   },
   "repository": {
     "type": "git",
@@ -22,5 +25,14 @@
   "bugs": {
     "url": "https://github.com/binarybabel/npm-versioneer/issues"
   },
-  "homepage": "https://github.com/binarybabel/npm-versioneer#readme"
+  "homepage": "https://github.com/binarybabel/npm-versioneer#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "js-yaml": "^3.8.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nodeunit": "^0.10.2",
+    "sleep": "^5.1.0"
+  }
 }
